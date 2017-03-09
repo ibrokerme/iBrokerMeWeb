@@ -1,7 +1,7 @@
-var monarchApp = angular.module('monarchApp', ['ngRoute', 'ngAnimate']);
+var ibrokermeApp = angular.module('ibrokermeApp', ['ngRoute', 'ngAnimate']);
  
 // configure our routes
-monarchApp.config(function ($routeProvider, $locationProvider) {
+ibrokermeApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
 
     .when('/', {
@@ -32,306 +32,306 @@ monarchApp.config(function ($routeProvider, $locationProvider) {
    
 });
  
-monarchApp.run(run);
+ibrokermeApp.run(run);
 
 function run($rootScope, $location, $http) {
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
         $location.path('/');
     });
 }
-monarchApp.controller('indexController', function($scope) {
+ibrokermeApp.controller('indexController', function($scope) {
     debugger;
 });
 
-monarchApp.controller('advanced-datatablesController', function($scope) {
+ibrokermeApp.controller('advanced-datatablesController', function($scope) {
     debugger;
 });
 
-monarchApp.controller('animationsController', function($scope) {
+ibrokermeApp.controller('animationsController', function($scope) {
     
 });
 
-monarchApp.controller('bs-carouselController', function($scope) {
+ibrokermeApp.controller('bs-carouselController', function($scope) {
     
 });
 
-monarchApp.controller('buttonsController', function($scope) {
+ibrokermeApp.controller('buttonsController', function($scope) {
     
 });
 
-monarchApp.controller('calendarController', function($scope) {
+ibrokermeApp.controller('calendarController', function($scope) {
     
 });
 
-monarchApp.controller('chart-boxesController', function($scope) {
+ibrokermeApp.controller('chart-boxesController', function($scope) {
     
 });
 
-monarchApp.controller('chart-jsController', function($scope) {
+ibrokermeApp.controller('chart-jsController', function($scope) {
     
 });
 
-monarchApp.controller('chatController', function($scope) {
+ibrokermeApp.controller('chatController', function($scope) {
     
 });
 
-monarchApp.controller('checklistController', function($scope) {
+ibrokermeApp.controller('checklistController', function($scope) {
     
 });
 
-monarchApp.controller('ckeditorController', function($scope) {
+ibrokermeApp.controller('ckeditorController', function($scope) {
     
 });
 
-monarchApp.controller('collapsableController', function($scope) {
+ibrokermeApp.controller('collapsableController', function($scope) {
     
 });
 
-monarchApp.controller('content-boxesController', function($scope) {
+ibrokermeApp.controller('content-boxesController', function($scope) {
     
 });
 
-monarchApp.controller('data-tablesController', function($scope) {
+ibrokermeApp.controller('data-tablesController', function($scope) {
     
 });
 
-monarchApp.controller('dropzone-uploaderController', function($scope) {
+ibrokermeApp.controller('dropzone-uploaderController', function($scope) {
     
 });
 
-monarchApp.controller('fixed-datatablesController', function($scope) {
+ibrokermeApp.controller('fixed-datatablesController', function($scope) {
     
 });
 
-monarchApp.controller('flot-chartsController', function($scope) {
+ibrokermeApp.controller('flot-chartsController', function($scope) {
     
 });
 
-monarchApp.controller('forms-elementsController', function($scope) {
+ibrokermeApp.controller('forms-elementsController', function($scope) {
     
 });
 
-monarchApp.controller('forms-masksController', function($scope) {
+ibrokermeApp.controller('forms-masksController', function($scope) {
     
 });
 
-monarchApp.controller('forms-validationController', function($scope) {
+ibrokermeApp.controller('forms-validationController', function($scope) {
     
 });
 
-monarchApp.controller('forms-wizardController', function($scope) {
+ibrokermeApp.controller('forms-wizardController', function($scope) {
     
 });
 
-monarchApp.controller('gmapsController', function($scope) {
+ibrokermeApp.controller('gmapsController', function($scope) {
     
 });
 
-monarchApp.controller('helper-classesController', function($scope) {
+ibrokermeApp.controller('helper-classesController', function($scope) {
     
 });
 
-monarchApp.controller('iconsController', function($scope) {
+ibrokermeApp.controller('iconsController', function($scope) {
     
 });
 
-monarchApp.controller('image-cropController', function($scope) {
+ibrokermeApp.controller('image-cropController', function($scope) {
     
 });
 
-monarchApp.controller('imagesController', function($scope) {
+ibrokermeApp.controller('imagesController', function($scope) {
     
 });
 
-monarchApp.controller('indexController', function($scope) {
+ibrokermeApp.controller('indexController', function($scope) {
     
 });
 
-monarchApp.controller('index-altController', function($scope) {
+ibrokermeApp.controller('index-altController', function($scope) {
     
 });
 
-monarchApp.controller('inline-editorController', function($scope) {
+ibrokermeApp.controller('inline-editorController', function($scope) {
     
 });
 
-monarchApp.controller('input-knobsController', function($scope) {
+ibrokermeApp.controller('input-knobsController', function($scope) {
     
 });
 
-monarchApp.controller('just-gageController', function($scope) {
+ibrokermeApp.controller('just-gageController', function($scope) {
     
 });
 
-monarchApp.controller('labels-badgesController', function($scope) {
+ibrokermeApp.controller('labels-badgesController', function($scope) {
     
 });
 
-monarchApp.controller('lazyloadController', function($scope) {
+ibrokermeApp.controller('lazyloadController', function($scope) {
     
 });
 
-monarchApp.controller('loading-feedbackController', function($scope) {
+ibrokermeApp.controller('loading-feedbackController', function($scope) {
     
 });
 
-monarchApp.controller('mailbox-composeController', function($scope) {
+ibrokermeApp.controller('mailbox-composeController', function($scope) {
     
 });
 
-monarchApp.controller('mailbox-inboxController', function($scope) {
+ibrokermeApp.controller('mailbox-inboxController', function($scope) {
     
 });
 
-monarchApp.controller('mailbox-singleController', function($scope) {
+ibrokermeApp.controller('mailbox-singleController', function($scope) {
     
 });
 
-monarchApp.controller('mapaelController', function($scope) {
+ibrokermeApp.controller('mapaelController', function($scope) {
     
 });
 
-monarchApp.controller('markdownController', function($scope) {
+ibrokermeApp.controller('markdownController', function($scope) {
     
 });
 
-monarchApp.controller('modalsController', function($scope) {
+ibrokermeApp.controller('modalsController', function($scope) {
     
 });
 
-monarchApp.controller('morris-chartsController', function($scope) {
+ibrokermeApp.controller('morris-chartsController', function($scope) {
     
 });
 
-monarchApp.controller('multi-uploaderController', function($scope) {
+ibrokermeApp.controller('multi-uploaderController', function($scope) {
     
 });
 
-monarchApp.controller('nav-menusController', function($scope) {
+ibrokermeApp.controller('nav-menusController', function($scope) {
     
 });
 
-monarchApp.controller('notificationsController', function($scope) {
+ibrokermeApp.controller('notificationsController', function($scope) {
     
 });
 
-monarchApp.controller('page-transitionsController', function($scope) {
+ibrokermeApp.controller('page-transitionsController', function($scope) {
     
 });
 
-monarchApp.controller('panel-boxesController', function($scope) {
+ibrokermeApp.controller('panel-boxesController', function($scope) {
     
 });
 
-monarchApp.controller('pickersController', function($scope) {
+ibrokermeApp.controller('pickersController', function($scope) {
     
 });
 
-monarchApp.controller('pie-gagesController', function($scope) {
+ibrokermeApp.controller('pie-gagesController', function($scope) {
     
 });
 
-monarchApp.controller('popovers-tooltipsController', function($scope) {
+ibrokermeApp.controller('popovers-tooltipsController', function($scope) {
     
 });
 
-monarchApp.controller('progress-barsController', function($scope) {
+ibrokermeApp.controller('progress-barsController', function($scope) {
     
 });
 
-monarchApp.controller('response-messagesController', function($scope) {
+ibrokermeApp.controller('response-messagesController', function($scope) {
     
 });
 
-monarchApp.controller('responsive-datatablesController', function($scope) {
+ibrokermeApp.controller('responsive-datatablesController', function($scope) {
     
 });
 
-monarchApp.controller('responsive-tablesController', function($scope) {
+ibrokermeApp.controller('responsive-tablesController', function($scope) {
     
 });
 
-monarchApp.controller('scrollbarsController', function($scope) {
+ibrokermeApp.controller('scrollbarsController', function($scope) {
     
 });
 
-monarchApp.controller('slidersController', function($scope) {
+ibrokermeApp.controller('slidersController', function($scope) {
     
 });
 
-monarchApp.controller('social-boxesController', function($scope) {
+ibrokermeApp.controller('social-boxesController', function($scope) {
     
 });
 
-monarchApp.controller('sortable-elementsController', function($scope) {
+ibrokermeApp.controller('sortable-elementsController', function($scope) {
     
 });
 
-monarchApp.controller('sparklinesController', function($scope) {
+ibrokermeApp.controller('sparklinesController', function($scope) {
     
 });
 
-monarchApp.controller('summernoteController', function($scope) {
+ibrokermeApp.controller('summernoteController', function($scope) {
     
 });
 
-monarchApp.controller('tablesController', function($scope) {
+ibrokermeApp.controller('tablesController', function($scope) {
     
 });
 
-monarchApp.controller('tabsController', function($scope) {
+ibrokermeApp.controller('tabsController', function($scope) {
     
 });
 
-monarchApp.controller('tile-boxesController', function($scope) {
+ibrokermeApp.controller('tile-boxesController', function($scope) {
     
 });
 
-monarchApp.controller('timelineController', function($scope) {
+ibrokermeApp.controller('timelineController', function($scope) {
     
 });
 
-monarchApp.controller('vector-mapsController', function($scope) {
+ibrokermeApp.controller('vector-mapsController', function($scope) {
     
 });
 
-monarchApp.controller('xchartsController', function($scope) {
+ibrokermeApp.controller('xchartsController', function($scope) {
     
 });
 
-monarchApp.controller('admin-blogController', function($scope){
+ibrokermeApp.controller('admin-blogController', function($scope){
 
 });
 
-monarchApp.controller('admin-pricingController', function($scope){
+ibrokermeApp.controller('admin-pricingController', function($scope){
 
 });
 
-monarchApp.controller('auto-menuController', function($scope){
+ibrokermeApp.controller('auto-menuController', function($scope){
 
 });
 
-monarchApp.controller('faq-sectionController', function($scope){
+ibrokermeApp.controller('faq-sectionController', function($scope){
 
 });
 
-monarchApp.controller('invoiceController', function($scope){
+ibrokermeApp.controller('invoiceController', function($scope){
 
 });
 
-monarchApp.controller('portfolio-galleryController', function($scope){
+ibrokermeApp.controller('portfolio-galleryController', function($scope){
 
 });
 
-monarchApp.controller('portfolio-masonryController', function($scope){
+ibrokermeApp.controller('portfolio-masonryController', function($scope){
 
 });
 
-monarchApp.controller('slidebarsController', function($scope){
+ibrokermeApp.controller('slidebarsController', function($scope){
 
 });
 
-monarchApp.controller('view-profileController', function($scope){
+ibrokermeApp.controller('view-profileController', function($scope){
 
 });
 
