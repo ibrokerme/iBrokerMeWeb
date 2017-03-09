@@ -2,14 +2,14 @@ var ibrokermeApp = angular.module('ibrokermeApp', ['ngRoute', 'ngAnimate']);
  
 // configure our routes
 ibrokermeApp.config(function ($routeProvider, $locationProvider) {
+   
     $routeProvider
-
     .when('/', {
         templateUrl: 'views/login.html',
         controller: 'indexController'
     })
-    .when('/index', {
-        templateUrl: '/production/admin-template/idashboard.html',
+    .when('/dashboard', {
+        templateUrl: 'production/admin-template/idashboard.html',
         controller: 'indexController'
     })
         .when('/advanced-datatables', {
@@ -29,7 +29,10 @@ ibrokermeApp.config(function ($routeProvider, $locationProvider) {
         templateUrl: 'pages/view-profile.hbs',
         controller: 'view-profileController'
     }).otherwise({ redirectTo: '/' });
-   
+  $locationProvider.html5Mode({
+       enabled: true,
+       requireBase: false
+});
 });
  
 ibrokermeApp.run(run);
@@ -40,7 +43,7 @@ function run($rootScope, $location, $http) {
     });
 }
 ibrokermeApp.controller('indexController', function($scope) {
-    debugger;
+   alert("here");
 });
 
 ibrokermeApp.controller('advanced-datatablesController', function($scope) {
