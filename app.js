@@ -11,28 +11,11 @@ ibrokermeApp.config(function ($routeProvider, $locationProvider) {
     .when('/dashboard', {
         templateUrl: 'production/admin-template/idashboard.html',
         controller: 'indexController'
-    })
-        .when('/advanced-datatables', {
-            templateUrl: 'pages/advanced-datatables.hbs',
-            controller: 'advanced-datatablesController'
-        })
-
-        .when('/animations', {
-            templateUrl: 'pages/animations.hbs',
-            controller: 'animationsController'
-        })
-        .when('/bs-carousel', {
-            templateUrl: 'pages/bs-carousel.hbs',
-            controller: 'bs-carouselController'
-        })
-    .when('/view-profile', {
-        templateUrl: 'pages/view-profile.hbs',
-        controller: 'view-profileController'
     }).otherwise({ redirectTo: '/' });
   $locationProvider.html5Mode({
        enabled: true,
        requireBase: false
-});
+    });
 });
  
 ibrokermeApp.run(run);
