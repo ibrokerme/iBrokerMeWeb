@@ -64,10 +64,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <script type="text/javascript" src="../../assets/angular/angular.js"></script>
+    <!--<script type="text/javascript" src="../../assets/angular/angular.js"></script>
     <script type="text/javascript" src="../../assets/angular/angular-route.js"></script>
     <script type="text/javascript" src="../../assets/angular/angular-animate.js"></script>
-    <script type="text/javascript" src="../../app.js"></script>
+    <script type="text/javascript" src="../../app.js"></script>-->
 
     <!-- Favicons -->
 
@@ -228,14 +228,23 @@
             }, 300);
         });
     </script>
-
-    <script type="text/javascript" src="../../assets/angular/angular.js"></script>
-    <script type="text/javascript" src="../../assets/angular/angular-route.js"></script>
-    <script type="text/javascript" src="../../assets/angular/angular-animate.js"></script>
-    <script type="text/javascript" src="../../app.js"></script>
+     <!--<script type="text/javascript">
+        $(window).load(function(){
+            setTimeout(function() {
+                $('#loading').fadeOut( 400, "linear" );
+            }, 300);
+        });
+    </script>-->
+    <script  src="../assets/angular/angular.js"></script>
+    <script  src="../assets/angular/angular-route.js"></script>
+    <script src="../assets/angular-route.min.js"></script>
+    <script src="../assets/angular/angular-animate.js"></script> 
+    <script  src="../app.js"></script>
+    <script src="../controllers/indexcontroller.js"></script>
+    
 
 </head>
-<body ng-controller="indexController">
+<body ng-controller="indexcontroller">
     <div id="loading">
         <div class="spinner">
             <div class="bounce1"></div>

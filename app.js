@@ -1,323 +1,102 @@
-var ibrokermeApp = angular.module('ibrokermeApp', ['ngRoute', 'ngAnimate']);
- 
-// configure our routes
-ibrokermeApp.config(function ($routeProvider, $locationProvider) {
-   
-    $routeProvider
-    .when('/', {
-        templateUrl: 'views/login.html',
-        controller: 'indexController'
-    })
-    .when('/dashboard', {
-        templateUrl: 'production/admin-template/idashboard.html',
-        controller: 'indexController'
-    }).otherwise({ redirectTo: '/' });
-  $locationProvider.html5Mode({
-       enabled: true,
-       requireBase: false
-    });
-});
- 
-ibrokermeApp.run(run);
 
-function run($rootScope, $location, $http) {
-    $rootScope.$on('$locationChangeStart', function (event, next, current) {
-        $location.path('/');
-    });
-}
-ibrokermeApp.controller('indexController', function($scope) {
-   alert("here");
-});
-
-ibrokermeApp.controller('advanced-datatablesController', function($scope) {
-    debugger;
-});
-
-ibrokermeApp.controller('animationsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('bs-carouselController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('buttonsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('calendarController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('chart-boxesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('chart-jsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('chatController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('checklistController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('ckeditorController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('collapsableController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('content-boxesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('data-tablesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('dropzone-uploaderController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('fixed-datatablesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('flot-chartsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('forms-elementsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('forms-masksController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('forms-validationController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('forms-wizardController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('gmapsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('helper-classesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('iconsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('image-cropController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('imagesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('indexController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('index-altController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('inline-editorController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('input-knobsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('just-gageController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('labels-badgesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('lazyloadController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('loading-feedbackController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('mailbox-composeController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('mailbox-inboxController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('mailbox-singleController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('mapaelController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('markdownController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('modalsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('morris-chartsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('multi-uploaderController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('nav-menusController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('notificationsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('page-transitionsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('panel-boxesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('pickersController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('pie-gagesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('popovers-tooltipsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('progress-barsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('response-messagesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('responsive-datatablesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('responsive-tablesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('scrollbarsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('slidersController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('social-boxesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('sortable-elementsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('sparklinesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('summernoteController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('tablesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('tabsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('tile-boxesController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('timelineController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('vector-mapsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('xchartsController', function($scope) {
-    
-});
-
-ibrokermeApp.controller('admin-blogController', function($scope){
-
-});
-
-ibrokermeApp.controller('admin-pricingController', function($scope){
-
-});
-
-ibrokermeApp.controller('auto-menuController', function($scope){
-
-});
-
-ibrokermeApp.controller('faq-sectionController', function($scope){
-
-});
-
-ibrokermeApp.controller('invoiceController', function($scope){
-
-});
-
-ibrokermeApp.controller('portfolio-galleryController', function($scope){
-
-});
-
-ibrokermeApp.controller('portfolio-masonryController', function($scope){
-
-});
-
-ibrokermeApp.controller('slidebarsController', function($scope){
-
-});
-
-ibrokermeApp.controller('view-profileController', function($scope){
-
-});
+var ibrokermeApp = angular.module('ibrokermeApp', ['ngRoute']);
+ibrokermeApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+      $routeProvider
+      .when("/", {
+          templateUrl: "/views/login.html",
+          controller: "indexcontroller",
+      }).
+       when("/dashboard", {
+           templateUrl: "/views/idashboard.html",
+           controller: "indexcontroller"
+       }).otherwise({ redirectTo: '/' });
+
+      //$locationProvider.html5Mode({
+      //    enabled: true,
+      //    requireBase: false
+      //});
+
+
+  }]);
+//ibrokermeApp.config(function ($routeProvider) {
+
+//    $routeProvider
+//      // route for the home page
+//       .when("/", {
+//           templateUrl: "/views/login.html",
+//           controller: "indexcontroller",
+//       }).
+//      when("/dashboard", {
+//          templateUrl: "/production/admin-template/idashboard.html",
+//          controller: "indexcontroller"
+//      }).otherwise({ redirectTo: '/' });
+//});
+//ibrokermeApp.run(function ($rootScope, $templateCache) {
+//    $rootScope.$on('$viewContentLoaded', function () {
+//        $templateCache.removeAll();
+//    });
+//});
+////ibrokermeApp.run(run);
+////run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
+//function run($rootScope, $location, $cookieStore, $http) {
+//    $rootScope.registration = { "pointer-events": "none", "cursor": "default" };
+//    $rootScope.admin = { "pointer-events": "none", "cursor": "default" };
+//    $rootScope.parent = { "pointer-events": "none", "cursor": "default" };
+//    $rootScope.teacher = { "pointer-events": "none", "cursor": "default" };
+//    $rootScope.student = { "pointer-events": "none", "cursor": "default" };
+//    $rootScope.assessment = { "pointer-events": "none", "cursor": "default" };
+//    var category = $cookieStore.get('category');
+//    switch (category) {
+//        case 'school':
+//            $rootScope.registration = { "pointer-events": "", "cursor": "" };
+//            break;
+//        case 'admin':
+//            $rootScope.registration = { "pointer-events": "", "cursor": "" };
+//            $rootScope.admin = { "pointer-events": "", "cursor": "" };
+//            $rootScope.parent = { "pointer-events": "", "cursor": "" };
+//            $rootScope.teacher = { "pointer-events": "", "cursor": "" };
+//            $rootScope.student = { "pointer-events": "", "cursor": "" };
+//            $rootScope.assessment = { "pointer-events": "", "cursor": "" };
+//            break;
+//        case 'teacher':
+//            $rootScope.teacher = { "pointer-events": "", "cursor": "" };
+//            break;
+//    }
+
+//    // keep user logged in after page refresh
+//    $rootScope.globals = $cookieStore.get('globals') || {};
+//    if ($rootScope.globals.currentUser) {
+//        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+//    }
+
+//    $rootScope.$on('$locationChangeStart', function (event, next, current) {
+//        // redirect to login page if not logged in and trying to access a restricted page
+//        //  var restrictedPage = $.inArray($location.path(), ['/', '/register']) === -1;
+//        debugger;
+//        var loggedIn = $rootScope.globals.currentUser;
+//        if (!loggedIn) {
+//            $location.path('/');
+//        }
+
+//    });
+
+
+//}
+//ibrokermeApp.config(['$httpProvider', function ($httpProvider) {
+//    //initialize get if not there
+//    $httpProvider.defaults.cache = false;
+//    if (!$httpProvider.defaults.headers.get) {
+//        $httpProvider.defaults.headers.get = {};
+//    }
+//    $httpProvider.defaults.headers.common = {};
+//    $httpProvider.defaults.headers.post = {};
+//    $httpProvider.defaults.headers.put = {};
+//    $httpProvider.defaults.headers.patch = {};
+//    //disable IE ajax request caching
+//    // $httpProvider.defaults.headers.get['Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+//    // $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+//    //// extra
+//    $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+//    $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
+//}]);
 
