@@ -1,23 +1,28 @@
-
+path = 'http://localhost:3000';
 var ibrokermeApp = angular.module('ibrokermeApp', ['ngRoute']);
-ibrokermeApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-      $routeProvider
-      .when("/", {
-          templateUrl: "/views/login.html",
-          controller: "indexcontroller",
-      }).
-       when("/dashboard", {
-           templateUrl: "/views/idashboard.html",
-           controller: "indexcontroller"
-       }).otherwise({ redirectTo: '/' });
+ibrokermeApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
+    $httpProvider.interceptors.push('tokeninterceptor');
+    $routeProvider
+    .when("/", {
+        templateUrl: "/views/login.html",
+        controller: "indexcontroller",
+    })
+     .when("/registration", {
+         templateUrl: "/views/registration.html",
+         controller: "logincontroller",
+     }).
+     when("/dashboard", {
+         templateUrl: "/views/idashboard.html",
+         controller: "indexcontroller"
+     }).otherwise({ redirectTo: '/' });
 
-      //$locationProvider.html5Mode({
-      //    enabled: true,
-      //    requireBase: false
-      //});
+    //$locationProvider.html5Mode({
+    //    enabled: true,
+    //    requireBase: false
+    //});
 
 
-  }]);
+}]);
 //ibrokermeApp.config(function ($routeProvider) {
 
 //    $routeProvider

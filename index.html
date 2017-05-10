@@ -217,9 +217,32 @@
     <script type="text/javascript" src="../../assets/js-core/modernizr.js"></script>
     <script type="text/javascript" src="../../assets/js-core/jquery-cookie.js"></script>
 
+    <!-- jQueryUI Datepicker -->
+    <!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/datepicker-ui/datepicker.css">-->
+    <script type="text/javascript" src="../../assets/widgets/datepicker-ui/datepicker.js"></script>
+    <script type="text/javascript" src="../../assets/widgets/datepicker-ui/datepicker-demo.js"></script>
+    <!-- Bootstrap Daterangepicker -->
+    <!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/daterangepicker/daterangepicker.css">-->
+    <script type="text/javascript" src="../../assets/widgets/daterangepicker/moment.js"></script>
+    <script type="text/javascript" src="../../assets/widgets/daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="../../assets/widgets/daterangepicker/daterangepicker-demo.js"></script>
 
 
+    <!-- Bootstrap Datepicker -->
+    <!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/datepicker/datepicker.css">-->
+    <script type="text/javascript" src="../../assets/widgets/datepicker/datepicker.js"></script>
+    <script type="text/javascript">
+        /* Datepicker bootstrap */
 
+        $(function () {
+            "use strict";
+            $('.bootstrap-datepicker').bsdatepicker({
+                format: 'mm-dd-yyyy'
+            });
+        });
+
+    </script>
+  
 
     <script type="text/javascript">
         $(window).load(function () {
@@ -235,12 +258,23 @@
             }, 300);
         });
     </script>-->
-    <script  src="../assets/angular/angular.js"></script>
-    <script  src="../assets/angular/angular-route.js"></script>
-    <script src="../assets/angular-route.min.js"></script>
-    <script src="../assets/angular/angular-animate.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <script src="/assets/angular/angular.js"></script>
+    <script src="/assets/angular/angular-cookies.js"></script>
+    <script src="/assets/angular/angular-route.min.js"></script>
+    <script src="/assets/angular/angular-sanitize.min.js"></script>
+
+    <script  src="../assets/angular/angular.min.js"></script>
+    <!--<script  src="../assets/angular/angular-route.js"></script>
+    <script src="../assets/angular-route.min.js"></script>-->
+    <!--<script src="../assets/angular/angular-animate.js"></script>--> 
     <script  src="../app.js"></script>
+    <script src="../factory/authfactory.js"></script> 
+    <script src="../services/loginservice.js"></script>
+
     <script src="../controllers/indexcontroller.js"></script>
+    <script src="../controllers/logincontroller.js"></script>
     
 
 </head>
