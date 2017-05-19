@@ -39,13 +39,13 @@
                                     <small>Login to your account.</small>
                                 </span>
                                 <span class="header-buttons">
-                                    <a ng-click="navigatetosignup()" class="btn btn-sm btn-primary" title="">Sign Up</a>
+                                    <a href="#registration" class="btn btn-sm btn-primary" title="">Sign Up</a>
                                 </span>
                             </h3>
                             <div class="content-box-wrapper">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                        <input type="email" class="form-control"  ng-model="useremail" placeholder="Enter email">
                                         <span class="input-group-addon bg-blue">
                                             <i class="glyph-icon icon-envelope-o"></i>
                                         </span>
@@ -53,21 +53,21 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        <input type="password" class="form-control" ng-model="userpassword" placeholder="Password">
                                         <span class="input-group-addon bg-blue">
                                             <i class="glyph-icon icon-unlock-alt"></i>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <a href="recovery.html" title="Recover password">Forgot Your Password?</a>
+                                    <a href="#recovery" title="Recover password">Forgot Your Password?</a>
                                 </div>
                                 <input type="button"  class="btn btn-success" ng-click="processsignin()" value="Sign In"/>
 
                             </div>
                         </div>
                         <div class="divider"></div>
-                        <div align="center">Not a member yet? <a ng-click="navigatetosignup()" title="Register">Click here to sign up</a>!</div>
+                        <div align="center">Not a member yet? <a href="#registration" title="Register">Click here to sign up</a>!</div>
                         <br>
                     </form>
                 </div>

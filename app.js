@@ -1,107 +1,86 @@
 path = 'http://localhost:3000';
-var ibrokermeApp = angular.module('ibrokermeApp', ['ngRoute']);
-ibrokermeApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
+// script.js
+//path = 'http://localhost:3000/api/v1';
+//pathlog = 'http://localhost:3000';
+//path = 'https://evaluatorapi.herokuapp.com/api/v1';
+//pathlog = 'https://evaluatorapi.herokuapp.com';
+var ibrokermeApp = angular.module('ibrokermeApp', ['ngRoute', 'ngSanitize', 'ngCookies']);
+
+ibrokermeApp.config(function ($routeProvider, $httpProvider, $locationProvider) {
     $httpProvider.interceptors.push('tokeninterceptor');
+    $locationProvider.hashPrefix('');
     $routeProvider
     .when("/", {
         templateUrl: "/views/login.html",
-        controller: "indexcontroller",
+        controller: "logincontroller",
+        access: {
+            requiredLogin: false
+        }
     })
      .when("/registration", {
          templateUrl: "/views/registration.html",
          controller: "logincontroller",
-     }).
+         access: {
+             requiredLogin: false
+         }
+     })
+      .when("/recovery", {
+             templateUrl: "/views/recovery.html",
+             controller: "logincontroller",
+             access: {
+                 requiredLogin: false
+             }
+         }).
      when("/dashboard", {
          templateUrl: "/views/idashboard.html",
-         controller: "indexcontroller"
+         controller: "indexcontroller",
+         access: {
+             requiredLogin: true
+         }
      }).otherwise({ redirectTo: '/' });
+});
+ibrokermeApp.run(function ($rootScope, $templateCache) {
+    $rootScope.$on('$viewContentLoaded', function () {
+        $templateCache.removeAll();
+    });
+});
+ibrokermeApp.run(function ($rootScope, $window, $location, authenticationfactory) {
+    // when the page refreshes, check if the user is already logged in 
+    authenticationfactory.check();
+    $rootScope.$on("$routeChangeStart", function (event, nextRoute, currentRoute) {
+        if ((nextRoute.access && nextRoute.access.requiredLogin) && !authenticationfactory.isLogged) {
+            $location.path("#/");
+        } else {
+            // check if user object exists else fetch it. This is incase of a page refresh
+            if (!authenticationfactory.user) authenticationfactory.user = $window.sessionStorage.user;
 
-    //$locationProvider.html5Mode({
-    //    enabled: true,
-    //    requireBase: false
-    //});
+        }
+    });
 
-
+    $rootScope.$on('$routeChangeSuccess', function (event, nextRoute, currentRoute) {
+        $rootScope.showMenu = authenticationfactory.isLogged;
+        // if the user is already logged in, take him to the home page
+        if (authenticationfactory.isLogged == true && $location.path() == '#/') {
+            $location.path('#/');
+        }
+    });
+});
+ibrokermeApp.config(['$httpProvider', function ($httpProvider) {
+    //initialize get if not there
+    $httpProvider.defaults.cache = true;
+    if (!$httpProvider.defaults.headers.get) {
+        $httpProvider.defaults.headers.get = {};
+    }
+    $httpProvider.defaults.headers.common = {};
+    $httpProvider.defaults.headers.post = {};
+    $httpProvider.defaults.headers.put = {};
+    $httpProvider.defaults.headers.patch = {};
+    //disable IE ajax request caching
+    // $httpProvider.defaults.headers.get['Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+    // $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+    //// extra
+    $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+    $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
 }]);
-//ibrokermeApp.config(function ($routeProvider) {
 
-//    $routeProvider
-//      // route for the home page
-//       .when("/", {
-//           templateUrl: "/views/login.html",
-//           controller: "indexcontroller",
-//       }).
-//      when("/dashboard", {
-//          templateUrl: "/production/admin-template/idashboard.html",
-//          controller: "indexcontroller"
-//      }).otherwise({ redirectTo: '/' });
-//});
-//ibrokermeApp.run(function ($rootScope, $templateCache) {
-//    $rootScope.$on('$viewContentLoaded', function () {
-//        $templateCache.removeAll();
-//    });
-//});
-////ibrokermeApp.run(run);
-////run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
-//function run($rootScope, $location, $cookieStore, $http) {
-//    $rootScope.registration = { "pointer-events": "none", "cursor": "default" };
-//    $rootScope.admin = { "pointer-events": "none", "cursor": "default" };
-//    $rootScope.parent = { "pointer-events": "none", "cursor": "default" };
-//    $rootScope.teacher = { "pointer-events": "none", "cursor": "default" };
-//    $rootScope.student = { "pointer-events": "none", "cursor": "default" };
-//    $rootScope.assessment = { "pointer-events": "none", "cursor": "default" };
-//    var category = $cookieStore.get('category');
-//    switch (category) {
-//        case 'school':
-//            $rootScope.registration = { "pointer-events": "", "cursor": "" };
-//            break;
-//        case 'admin':
-//            $rootScope.registration = { "pointer-events": "", "cursor": "" };
-//            $rootScope.admin = { "pointer-events": "", "cursor": "" };
-//            $rootScope.parent = { "pointer-events": "", "cursor": "" };
-//            $rootScope.teacher = { "pointer-events": "", "cursor": "" };
-//            $rootScope.student = { "pointer-events": "", "cursor": "" };
-//            $rootScope.assessment = { "pointer-events": "", "cursor": "" };
-//            break;
-//        case 'teacher':
-//            $rootScope.teacher = { "pointer-events": "", "cursor": "" };
-//            break;
-//    }
-
-//    // keep user logged in after page refresh
-//    $rootScope.globals = $cookieStore.get('globals') || {};
-//    if ($rootScope.globals.currentUser) {
-//        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-//    }
-
-//    $rootScope.$on('$locationChangeStart', function (event, next, current) {
-//        // redirect to login page if not logged in and trying to access a restricted page
-//        //  var restrictedPage = $.inArray($location.path(), ['/', '/register']) === -1;
-//        debugger;
-//        var loggedIn = $rootScope.globals.currentUser;
-//        if (!loggedIn) {
-//            $location.path('/');
-//        }
-
-//    });
-
-
-//}
-//ibrokermeApp.config(['$httpProvider', function ($httpProvider) {
-//    //initialize get if not there
-//    $httpProvider.defaults.cache = false;
-//    if (!$httpProvider.defaults.headers.get) {
-//        $httpProvider.defaults.headers.get = {};
-//    }
-//    $httpProvider.defaults.headers.common = {};
-//    $httpProvider.defaults.headers.post = {};
-//    $httpProvider.defaults.headers.put = {};
-//    $httpProvider.defaults.headers.patch = {};
-//    //disable IE ajax request caching
-//    // $httpProvider.defaults.headers.get['Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
-//    // $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
-//    //// extra
-//    $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
-//    $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
-//}]);
 

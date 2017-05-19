@@ -16,29 +16,19 @@
 
 ibrokermeApp.factory('userauthfactory', function ($window, $location, $http, authenticationfactory) {
     return {
-        login: function (postcode, password, category) {
-            debugger;
-            let post = path + '/clinics/postcode/' + 'CR9 1PJ';
-            let city = path + '/clinics/city/' + 'Southampton';
-            return $http.get(post).success(function (response) {
-                debugger;
-                return response.data;
-            });
-            //let assign = new FormData();
-            //assign.append('username', username);
-            //assign.append('password', password);
-            //assign.append('category', category);
-            //return $http.post(pathlog + '/login', assign, {
-            //    transformRequest: angular.identity,
-            //    headers: { 'Content-Type': undefined }
-            //})
-            // .success(function (response) {
-            //     return response;
-            // })
-            // .error(function (response) {
-            //     return response;
-            // });
-
+        login: function (useremail, password) {
+            let assign = new FormData();
+            assign.append('email', useremail);
+            assign.append('password', password);
+            return $http.post(path + '/login', assign, {
+                transformRequest: angular.identity,
+                headers: { 'Content-Type': undefined }
+            })
+             .then(function (response) {
+                 return response;
+             }, function (error) {
+                 return error;
+             });
         },
         logout: function () {
             if (authenticationfactory.isLogged) {
@@ -50,7 +40,7 @@ ibrokermeApp.factory('userauthfactory', function ($window, $location, $http, aut
                 delete $window.sessionStorage.user;
                 delete $window.sessionStorage.userRole;
 
-                $location.path("/login");
+                $location.path("#/");
             }
 
         }
@@ -58,7 +48,6 @@ ibrokermeApp.factory('userauthfactory', function ($window, $location, $http, aut
 });
 
 ibrokermeApp.factory('tokeninterceptor', function ($q, $window) {
-    debugger;
     return {
         request: function (config) {
             config.headers = config.headers || {};
