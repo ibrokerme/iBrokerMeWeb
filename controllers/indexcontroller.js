@@ -1,4 +1,4 @@
-﻿ibrokermeApp.controller('indexcontroller', function ($scope, $location, $window, authenticationfactory) {
+﻿ibrokermeApp.controller('indexcontroller', function ($scope, $location, $window, authenticationfactory, userauthfactory) {
     const token = $window.sessionStorage.token;
     $scope.username = $window.sessionStorage.username;
     $scope.processlogout = function () {
@@ -16,16 +16,18 @@
         }
     }
     $scope.unlockscreen = function () {
-        let pass = $scope.unlockpassword;
-        let password = $window.sessionStorage.getItem("password");
-        if (pass === password) {
-            $window.sessionStorage.setItem("unlock", true);
-            $location.path("/dashboard");
-        }
-        else {
-            $window.sessionStorage.setItem("unlock", false);
-            $scope.message = "Password is wrong";
-        }
+        let password = $scope.unlockpassword;
+        let email = $window.sessionStorage.getItem("email");
+        userauthfactory.login(email, password).then(function (resp) {
+            if (resp.status == '200') {
+                $window.sessionStorage.setItem("unlock", true);
+                $location.path('/dashboard');
+            }
+            else {
+                $window.sessionStorage.setItem("unlock", false);
+                $scope.message = "Password is wrong";
+            }
+        })
     }
 });
 

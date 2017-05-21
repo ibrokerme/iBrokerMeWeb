@@ -22,7 +22,6 @@
     $scope.processsignin = function () {
         let email = $scope.useremail;
         let password = $scope.userpassword;
-        
         if (email !== undefined && password !== undefined) {
             userauthfactory.login(email, password).then(function (resp) {
                 if (resp.status == '200') {
@@ -35,8 +34,6 @@
                     $window.sessionStorage.setItem("username", user.username);
                     $window.sessionStorage.setItem("userid", user.userid);
                     $window.sessionStorage.setItem("email", user.email);
-                    $window.sessionStorage.setItem("password", password);
-
                     $location.path('/dashboard');
                 }
                 else if (resp.status == '401') {
