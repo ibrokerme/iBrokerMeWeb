@@ -1,38 +1,41 @@
 ﻿ibrokermeApp.controller('logincontroller', function ($scope, $rootScope, $location,
     $window, userauthfactory, authenticationfactory, loginservice) {
-
-    //if (authenticationfactory.isLogged) {
-    //    authenticationfactory.isLogged = false;
-    //    delete authenticationfactory.user;
-    //    delete authenticationfactory.userRole;
-
-    //    delete $window.sessionStorage.token;
-    //    delete $window.sessionStorage.user;
-    //    delete $window.sessionStorage.userRole;
-
-    //    authenticationservice.clearcredentials();
-    //    $rootScope.loglabel = 'Sign In';
-    //    $scope.isaboutlogin = false;
-    //    $scope.isdefault = true;
-
-    //   $location.path("#/");
-    //}
     $scope.passwordrecovery = function () {
-        let useremail = $scope.useremail;
-        let username = $scope.username;
-        debugger;
+        let email = $scope.useremail === undefined ? '' : $scope.useremail;
+        let name = $scope.username === undefined ? '' : $scope.username;
+        if (email !== "" || name !== "") {
+            loginservice.recoverpassword(email, name).then(function (response) {
+                if (response.status === 200) {
+                    $scope.message = "Email sent to you with your requested password";
+                    $location.path("#/");
+                }
+                else {
+                    $scope.message = response.data;
+                }
+
+            });
+        }
+        else {
+            $scope.message = 'Email Or Username is not valid';
+        }
     }
     $scope.processsignin = function () {
         let email = $scope.useremail;
         let password = $scope.userpassword;
-
+        
         if (email !== undefined && password !== undefined) {
             userauthfactory.login(email, password).then(function (resp) {
                 if (resp.status == '200') {
+                    let user = resp.data.user;
+                    let client = { email: user.email, userid: user.userid, username: user.username }
                     authenticationfactory.isLogged = true;
-                    authenticationfactory.user = resp.data.user;
+                    authenticationfactory.user = client;
                     $window.sessionStorage.token = resp.data.token;
-                    $window.sessionStorage.user = resp.data.user;
+                    $window.sessionStorage.user = client;
+                    $window.sessionStorage.setItem("username", user.username);
+                    $window.sessionStorage.setItem("userid", user.userid);
+                    $window.sessionStorage.setItem("email", user.email);
+                    $window.sessionStorage.setItem("password", password);
 
                     $location.path('/dashboard');
                 }
@@ -53,8 +56,8 @@
         let password = $scope.password;
         let confirmpassword = $scope.confirmpassword;
         let termsaccepted = $scope.termsaccepted;
-        let location = $location.absUrl().replace('registration','');
- 
+        let location = $location.absUrl().replace('registration', '');
+
         if (confirmpassword !== password) {
             $scope.message = "Password and confirmed password do not match"
         }
@@ -63,9 +66,10 @@
         }
         else {
             $scope.message = "";
-            loginservice.addregistration(username, gender, email, dateofbirth, password,location,termsaccepted).then(function (response) {  
+            loginservice.addregistration(username, gender, email, dateofbirth, password, location, termsaccepted).then(function (response) {
                 if (response.data.insertedCount > 0) {
                     $scope.message = "Email sent to you with link to login";
+                    $location.path("#/");
                 }
                 else if (response.data === 'Email already used') {
                     $scope.message = response.data;

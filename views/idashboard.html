@@ -372,7 +372,7 @@
                 <div class="user-account-btn dropdown">
                     <a href="#" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
                         <img width="28" src="../../assets/image-resources/iBMAavtar.png" alt="Profile image">
-                        <span>Ivan Grisedale</span>
+                        <span>{{username}}</span>
                         <i class="glyph-icon icon-angle-down"></i>
                     </a>
                     <div class="dropdown-menu float-left">
@@ -400,21 +400,26 @@
 
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="lockscreen.html">
+                                <!--<li>
+                                    <a href="#lockscreen">
                                         <i class="glyph-icon float-right icon-lock"></i>
                                         Lockscreen
-
+                                    </a>
+                                </li>-->
+                                <li>
+                                    <a href="#lockscreen">
+                                        <i class="glyph-icon icon-power-off"></i>
+                                        Logout
                                     </a>
                                 </li>
 
                             </ul>
-                            <div class="pad5A button-pane button-pane-alt text-center">
+                            <!--<div class="pad5A button-pane button-pane-alt text-center">
                                 <a href="#" class="btn display-block font-normal btn-danger">
                                     <i class="glyph-icon icon-power-off"></i>
                                     Logout
                                 </a>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -742,8 +747,11 @@
                         </div>
                     </div>
                 </div>
-                <a class="header-btn" id="logout-btn" href="lockscreen.html" title="Lockscreen">
+                <a class="header-btn" id="logout-btn" href="#lockscreen" title="Lockscreen">
                     <i class="glyph-icon icon-linecons-lock"></i>
+                </a>
+                <a class="header-btn" id="logout-logout" ng-click="processlogout()" title="Logout">
+                    <i class="glyph-icon icon-power-off"></i>
                 </a>
             </div><!-- #header-nav-right -->
         </div>
@@ -868,7 +876,7 @@
                         </div><!-- .sidebar-submenu -->
                     </li>
                     <li>
-                        <a href="lockscreen.html" title="Lockscreen">
+                        <a href="#lockscreen" title="Lockscreen">
                             <i class="glyph-icon icon-linecons-lock"></i>
                             <span>Lockscreen</span>
                         </a>

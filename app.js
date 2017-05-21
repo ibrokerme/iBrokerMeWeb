@@ -25,19 +25,26 @@ ibrokermeApp.config(function ($routeProvider, $httpProvider, $locationProvider) 
          }
      })
       .when("/recovery", {
-             templateUrl: "/views/recovery.html",
-             controller: "logincontroller",
-             access: {
-                 requiredLogin: false
-             }
-         }).
-     when("/dashboard", {
-         templateUrl: "/views/idashboard.html",
-         controller: "indexcontroller",
-         access: {
-             requiredLogin: true
-         }
-     }).otherwise({ redirectTo: '/' });
+          templateUrl: "/views/recovery.html",
+          controller: "logincontroller",
+          access: {
+              requiredLogin: false
+          }
+      }).
+    when("/lockscreen", {
+        templateUrl: "/views/lockscreen.html",
+        controller: "indexcontroller",
+        access: {
+            requiredLogin: true
+        }
+    }).
+    when("/dashboard", {
+        templateUrl: "/views/idashboard.html",
+        controller: "indexcontroller",
+        access: {
+            requiredLogin: true
+        }
+    }).otherwise({ redirectTo: '/' });
 });
 ibrokermeApp.run(function ($rootScope, $templateCache) {
     $rootScope.$on('$viewContentLoaded', function () {
@@ -48,6 +55,18 @@ ibrokermeApp.run(function ($rootScope, $window, $location, authenticationfactory
     // when the page refreshes, check if the user is already logged in 
     authenticationfactory.check();
     $rootScope.$on("$routeChangeStart", function (event, nextRoute, currentRoute) {
+        let unlock = $window.sessionStorage.getItem("unlock");
+        if (nextRoute.$$route.originalPath === '/lockscreen' ||
+            currentRoute.$$route.originalPath === '/lockscreen' && authenticationfactory.isLogged) {
+            if (unlock) {
+                $location.path("/dashboard");
+                $window.sessionStorage.removeItem("unlock");
+            }
+            else {
+                $location.path("/lockscreen");
+            }
+        }
+
         if ((nextRoute.access && nextRoute.access.requiredLogin) && !authenticationfactory.isLogged) {
             $location.path("#/");
         } else {
@@ -63,6 +82,7 @@ ibrokermeApp.run(function ($rootScope, $window, $location, authenticationfactory
         if (authenticationfactory.isLogged == true && $location.path() == '#/') {
             $location.path('#/');
         }
+
     });
 });
 ibrokermeApp.config(['$httpProvider', function ($httpProvider) {
