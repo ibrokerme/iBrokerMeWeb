@@ -53,8 +53,9 @@ ibrokermeApp.factory('tokeninterceptor', function ($q, $window) {
             config.headers = config.headers || {};
             if ($window.sessionStorage.token) {
                 config.headers['X-Access-Token'] = $window.sessionStorage.token;
-                config.headers['X-Key'] = $window.sessionStorage.user;
-                config.headers['Cat'] = $window.sessionStorage.userRole;
+                config.headers['X-UserId'] = $window.sessionStorage.getItem('userid');
+                config.headers['X-Email'] = $window.sessionStorage.getItem('email');
+                config.headers['X-Username'] = $window.sessionStorage.getItem('username');
                 config.headers['Content-Type'] = "application/json";
             }
             return config || $q.when(config);

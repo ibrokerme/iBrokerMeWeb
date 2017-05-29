@@ -1,6 +1,6 @@
 path = 'http://localhost:3000';
 // script.js
-//path = 'http://localhost:3000/api/v1';
+pathauth = 'http://localhost:3000/api/v1';
 //pathlog = 'http://localhost:3000';
 //path = 'https://evaluatorapi.herokuapp.com/api/v1';
 //pathlog = 'https://evaluatorapi.herokuapp.com';
@@ -34,6 +34,13 @@ ibrokermeApp.config(function ($routeProvider, $httpProvider, $locationProvider) 
     when("/lockscreen", {
         templateUrl: "/views/lockscreen.html",
         controller: "indexcontroller",
+        access: {
+            requiredLogin: true
+        }
+    }).
+    when("/profile", {
+        templateUrl: "/views/profile.html",
+        controller: "whoamicontroller",
         access: {
             requiredLogin: true
         }

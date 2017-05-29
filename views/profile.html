@@ -1,4 +1,5 @@
-﻿<div id="sb-site">
+﻿<!--Start of Chat sidebar -->
+<div id="sb-site">
     <div class="sb-slidebar bg-black sb-left sb-style-overlay">
         <div class="scrollable-content scrollable-slim-sidebar">
             <div class="pad10A">
@@ -338,13 +339,7 @@
             </div>
         </div>
     </div>
-    <!--<div id="loading">
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-        </div>
-    </div>-->
+
     <!--End of Statistics sidebar -->
 
     <div id="page-wrapper">
@@ -385,7 +380,7 @@
                                 <div class="user-info">
                                     <span>
                                         Ivan Grisedale
-                                        <i>Chief Operations Manager</i>
+                                        <i>Cheif Operations Manager</i>
                                     </span>
                                     <a href="#" title="Edit profile">Edit profile</a>
                                     <a href="#" title="View notifications">View notifications</a>
@@ -400,26 +395,21 @@
 
                                     </a>
                                 </li>
-                                <!--<li>
-                                    <a href="#lockscreen">
+                                <li>
+                                    <a href="lockscreen.html">
                                         <i class="glyph-icon float-right icon-lock"></i>
                                         Lockscreen
-                                    </a>
-                                </li>-->
-                                <li>
-                                    <a href="#lockscreen">
-                                        <i class="glyph-icon icon-power-off"></i>
-                                        Logout
+
                                     </a>
                                 </li>
 
                             </ul>
-                            <!--<div class="pad5A button-pane button-pane-alt text-center">
+                            <div class="pad5A button-pane button-pane-alt text-center">
                                 <a href="#" class="btn display-block font-normal btn-danger">
                                     <i class="glyph-icon icon-power-off"></i>
                                     Logout
                                 </a>
-                            </div>-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -747,11 +737,8 @@
                         </div>
                     </div>
                 </div>
-                <a class="header-btn" id="logout-btn" href="#lockscreen" title="Lockscreen">
+                <a class="header-btn" id="logout-btn" href="lockscreen.html" title="Lockscreen">
                     <i class="glyph-icon icon-linecons-lock"></i>
-                </a>
-                <a class="header-btn" id="logout-logout" ng-click="processlogout()" title="Logout">
-                    <i class="glyph-icon icon-power-off"></i>
                 </a>
             </div><!-- #header-nav-right -->
         </div>
@@ -768,7 +755,7 @@
                     </li>
                     <li class="divider"></li>
                     <li class="no-menu">
-                        <a href="#profile" title="Profile">
+                        <a href="../admin-template/profile.html" title="Profile">
                             <i class="glyph-icon icon-linecons-user"></i>
                             <span>Who Am I (User Profile)</span>
 
@@ -876,7 +863,7 @@
                         </div><!-- .sidebar-submenu -->
                     </li>
                     <li>
-                        <a href="#lockscreen" title="Lockscreen">
+                        <a href="lockscreen.html" title="Lockscreen">
                             <i class="glyph-icon icon-linecons-lock"></i>
                             <span>Lockscreen</span>
                         </a>
@@ -911,25 +898,11 @@
 
                 <div class="container">
 
-                    <!-- Sparklines charts -->
-                    <script type="text/javascript" src="../../assets/widgets/charts/sparklines/sparklines.js"></script>
-                    <script type="text/javascript" src="../../assets/widgets/charts/sparklines/sparklines-demo.js"></script>
-                    <!-- Flot charts -->
-                    <script type="text/javascript" src="../../assets/widgets/charts/flot/flot.js"></script>
-                    <script type="text/javascript" src="../../assets/widgets/charts/flot/flot-resize.js"></script>
-                    <script type="text/javascript" src="../../assets/widgets/charts/flot/flot-stack.js"></script>
-                    <script type="text/javascript" src="../../assets/widgets/charts/flot/flot-pie.js"></script>
-                    <script type="text/javascript" src="../../assets/widgets/charts/flot/flot-tooltip.js"></script>
-                    <script type="text/javascript" src="../../assets/widgets/charts/flot/flot-demo-1.js"></script>
-                    <!-- PieGage charts -->
-                    <script type="text/javascript" src="../../assets/widgets/charts/piegage/piegage.js"></script>
-                    <script type="text/javascript" src="../../assets/widgets/charts/piegage/piegage-demo.js"></script>
 
                     <div id="page-title">
-                        <h3 class="text-left pad15B font-gray text-transform-upr font-size-23"><a href="#"><img src="../../assets/image-resources/iDashboard_screen.png" alt="iDashboard" align="middle"></a></h3>
+
                         <p>
-                            Designed for your convenience and to enhance your user experience. At a glance view all your Social Networks and Media
-                            feeds, videos, Picture, News feeds, along with an overview of your data stored within your <font color="#76A300">i</font>Broker<font color="#76A300">Me</font></font> account.
+                            A visual display of your personal data.
                         </p>
                         <div id="theme-options" class="admin-options">
                             <a href="javascript:void(0);" class="btn btn-primary theme-switcher tooltip-button" data-placement="left" title="Color schemes and layout options">
@@ -1036,261 +1009,205 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row mailbox-wrapper">
                         <div class="col-md-4">
-                            <div class="dashboard-box dashboard-box-chart bg-white content-box">
-                                <div class="content-wrapper">
-                                    <div class="header">
-                                        34,657
-                                        <span>Total Shares<b> in last</b> ten <b>quarters</b></span>
+                            <div class="panel-layout">
+                                <div class="panel-box">
+                                    <div class="panel-content image-box">
+                                        <div class="ribbon">
+                                            <div class="bg-primary">Member</div>
+                                        </div>
+                                        <div class="image-content font-white">
+                                            <div class="meta-box meta-box-bottom">
+                                                <div ng-show="showdefaultphoto">
+                                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                                        <img src='data:image/jpeg;base64,{{avatarImage}}' />
+                                                    </div>
+                                                    <h3 class="meta-heading" ng-trim="false">{{fullname}}</h3>
+                                                    <h4 class="meta-subheading"><I>{{occupation}}</I></h4>
+                                                </div>
+                                                <div ng-hide="showdefaultphoto">
+                                                    <img src="../../assets/image-resources/IvanGrisedale.jpg" alt="" class="meta-image img-bordered img-holder"/>
+                                                    <h3 class="meta-heading">Ivan Grisedale</h3>
+                                                    <h4 class="meta-subheading"><I>Cheif Operations Manager</I></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="../../assets/image-resources/blurred-bg/blurred-bg-13.jpg" alt="">
                                     </div>
-                                    <div class="bs-label bg-green">+18%</div>
-                                    <div class="center-div sparkline-big-alt">1245,1450,1312,1121,986,1489</div>
-                                    <div class="row list-grade">
-                                        <div class="col-md-2">January</div>
-                                        <div class="col-md-2">February</div>
-                                        <div class="col-md-2">March</div>
-                                        <div class="col-md-2">April</div>
-                                        <div class="col-md-2">May</div>
-                                        <div class="col-md-2">June</div>
+                                    <div class="panel-content pad15A bg-white radius-bottom-all-4">
+                                        <div class="clear profile-box">
+                                            <ul class="nav nav-pills nav-justified">
+                                                <li>
+                                                    <a href="#" class="btn btn-sm bg-facebook">
+                                                        <span class="glyph-icon icon-separator">
+                                                            <i class="glyph-icon icon-linkedin"></i>
+                                                        </span>
+                                                        <span class="button-content">
+                                                            LinkedIn
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-sm bg-facebook">
+                                                        <span class="glyph-icon icon-separator">
+                                                            <i class="glyph-icon icon-facebook"></i>
+                                                        </span>
+                                                        <span class="button-content">
+                                                            Facebook
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-sm bg-twitter">
+                                                        <span class="glyph-icon icon-separator">
+                                                            <i class="glyph-icon icon-twitter"></i>
+                                                        </span>
+                                                        <span class="button-content">
+                                                            Twitter
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="mrg15T mrg15B"></div>
+
                                     </div>
                                 </div>
-                                <div class="button-pane">
-                                    <div class="size-md float-left">
+                            </div>
+                            <div class="content-box mrg15B">
+                                <h3 class="content-box-header clearfix">
+                                    Friends online
+                                    <div class="font-size-11 float-right">
                                         <a href="#" title="">
-                                            Sharing statistics
+                                            <i class="glyph-icon mrg5R opacity-hover icon-plus"></i>
+                                        </a>
+                                        <a href="#" title="">
+                                            <i class="glyph-icon opacity-hover icon-cog"></i>
                                         </a>
                                     </div>
-                                    <a href="#" class="btn btn-info float-right tooltip-button" data-placement="top" title="View details">
-                                        <i class="glyph-icon icon-plus"></i>
-                                    </a>
+                                </h3>
+                                <div class="content-box-wrapper text-center clearfix">
+                                    <div class="status-badge mrg10A">
+                                        <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial1.jpg" alt="">
+                                        <div class="small-badge bg-red"></div>
+                                    </div>
+                                    <div class="status-badge mrg10A">
+                                        <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial2.jpg" alt="">
+                                        <div class="small-badge bg-orange"></div>
+                                    </div>
+                                    <div class="status-badge mrg10A">
+                                        <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial3.jpg" alt="">
+                                        <div class="small-badge bg-red"></div>
+                                    </div>
+                                    <div class="status-badge mrg10A">
+                                        <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial4.jpg" alt="">
+                                        <div class="small-badge bg-green"></div>
+                                    </div>
+                                    <div class="status-badge mrg10A">
+                                        <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial5.jpg" alt="">
+                                        <div class="small-badge bg-orange"></div>
+                                    </div>
+                                    <div class="status-badge mrg10A">
+                                        <img class="img-circle" width="40" src="../../assets/image-resources/people/testimonial6.jpg" alt="">
+                                        <div class="small-badge bg-red"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-box mrg15B">
+                                <h3 class="content-box-header clearfix">
+                                    Recent activity
+                                    <div class="font-size-11 float-right">
+                                        <a href="#" title="">
+                                            <i class="glyph-icon mrg5R opacity-hover icon-plus"></i>
+                                        </a>
+                                        <a href="#" title="">
+                                            <i class="glyph-icon opacity-hover icon-cog"></i>
+                                        </a>
+                                    </div>
+                                </h3>
+                                <div class="content-box-wrapper text-center clearfix">
+                                    <div class="timeline-box timeline-box-right">
+                                        <div class="tl-row">
+                                            <div class="tl-item">
+                                                <div class="tl-icon bg-yellow">
+                                                    <i class="glyph-icon icon-eyedropper"></i>
+                                                </div>
+                                                <div class="popover left">
+                                                    <div class="arrow"></div>
+                                                    <div class="popover-content">
+                                                        <div class="tl-label bs-label label-success">Meeting</div>
+                                                        <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+                                                        <div class="tl-time">
+                                                            <i class="glyph-icon icon-clock-o"></i>
+                                                            a few seconds ago
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tl-row">
+                                            <div class="tl-item">
+                                                <div class="tl-icon bg-blue">
+                                                    <i class="glyph-icon icon-line-chart"></i>
+                                                </div>
+                                                <div class="popover left">
+                                                    <div class="arrow"></div>
+                                                    <div class="popover-content">
+                                                        <div class="tl-label bs-label label-danger">Audio</div>
+                                                        <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+                                                        <div class="tl-time">
+                                                            <i class="glyph-icon icon-clock-o"></i>
+                                                            a few seconds ago
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tl-row">
+                                            <div class="tl-item">
+                                                <div class="tl-icon bg-blue">
+                                                    <i class="glyph-icon icon-cab"></i>
+                                                </div>
+                                                <div class="popover left">
+                                                    <div class="arrow"></div>
+                                                    <div class="popover-content">
+                                                        <div class="tl-label bs-label label-warning">Video</div>
+                                                        <p class="tl-content">Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+                                                        <div class="tl-time">
+                                                            <i class="glyph-icon icon-clock-o"></i>
+                                                            a few seconds ago
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="dashboard-box dashboard-box-chart bg-white content-box">
-                                <div class="content-wrapper">
-                                    <div class="header">
-                                        169
-                                        <span>Total Shares<b> in last</b> 6 days</span>
-                                    </div>
-                                    <div class="bs-label bg-red">-14%</div>
-                                    <div class="center-div sparkline-big-alt">21,41,31,50,18,41</div>
-                                    <div class="row list-grade">
-                                        <div class="col-md-2">M</div>
-                                        <div class="col-md-2">T</div>
-                                        <div class="col-md-2">W</div>
-                                        <div class="col-md-2">T</div>
-                                        <div class="col-md-2">F</div>
-                                        <div class="col-md-2">S</div>
-                                    </div>
-                                </div>
-                                <div class="button-pane">
-                                    <div class="size-md float-left">
-                                        <a href="#" title="">
-                                            View all members
-                                        </a>
-                                    </div>
-                                    <a href="#" class="btn btn-default float-right tooltip-button" data-placement="top" title="View details">
-                                        <i class="glyph-icon icon-angle-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="dashboard-box dashboard-box-chart bg-white content-box">
-                                <div class="content-wrapper">
-                                    <div class="header">
-                                        960
-                                        <span>Total share views<b> in last</b> 6 shares</span>
-                                    </div>
-                                    <div class="bs-label bg-orange">~51%</div>
-                                    <div class="center-div sparkline-big-alt">2210,2310,2010,2310,2123,2350</div>
-                                    <div class="row list-grade">
-                                        <div class="col-md-2">2009</div>
-                                        <div class="col-md-2">2010</div>
-                                        <div class="col-md-2">2011</div>
-                                        <div class="col-md-2">2012</div>
-                                        <div class="col-md-2">2013</div>
-                                        <div class="col-md-2">2014</div>
-                                    </div>
-                                </div>
-                                <div class="button-pane">
-                                    <div class="size-md float-left">
-                                        <a href="#" title="">
-                                            View more details
-                                        </a>
-                                    </div>
-                                    <a href="#" class="btn btn-primary float-right tooltip-button" data-placement="top" title="View details">
-                                        <i class="glyph-icon icon-caret-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-8">
-                            <div class="panel">
-                                <div class="panel-body">
-                                    <h3 class="title-hero">
-                                        Recent sharing activity
-                                    </h3>
-                                    <div class="example-box-wrapper">
-                                        <div id="data-example-1" class="mrg20B" style="width: 100%; height: 300px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <a href="#" title="Example tile shortcut" class="tile-box tile-box-alt btn-success">
-                                        <div class="tile-header">
-                                            Photo Gallery
-                                        </div>
-                                        <div class="tile-content-wrapper">
-                                            <div class="chart-alt-10" data-percent="43"><span>43</span>%</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="#" title="Example tile shortcut" class="tile-box tile-box-alt btn-info">
-                                        <div class="tile-header">
-                                            Subscriptions
-                                        </div>
-                                        <div class="tile-content-wrapper">
-                                            <div class="chart-alt-10" data-percent="76"><span>76</span>%</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="#" title="Example tile shortcut" class="tile-box tile-box-alt btn-warning">
-                                        <div class="tile-header">
-                                            New Visitors
-                                        </div>
-                                        <div class="tile-content-wrapper">
-                                            <div class="chart-alt-10" data-percent="11"><span>11</span>%</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="content-box mrg20T">
-                                <h3 class="content-box-header bg-primary">
-                                    Live updates
-                                    <span class="header-buttons-separator">
-                                        <a href="#" class="icon-separator toggle-button">
-                                            <i class="glyph-icon icon-chevron-down"></i>
-                                        </a>
-                                    </span>
-                                </h3>
-                                <div class="content-box-wrapper hide">
-                                    This content boxes has the header with <code>.bg-default</code>.
-                                </div>
-                            </div>
                             <div class="content-box">
-                                <h3 class="content-box-header bg-default">
-                                    <i class="glyph-icon icon-cog"></i>
-                                    Live views status
-                                    <span class="header-buttons-separator">
-                                        <a href="#" class="icon-separator">
-                                            <i class="glyph-icon icon-question"></i>
-                                        </a>
-                                        <a href="#" class="icon-separator refresh-button" data-style="dark" data-theme="bg-white" data-opacity="40">
-                                            <i class="glyph-icon icon-refresh"></i>
-                                        </a>
-                                        <a href="#" class="icon-separator remove-button" data-animation="flipOutX">
-                                            <i class="glyph-icon icon-times"></i>
-                                        </a>
-                                    </span>
-                                </h3>
-                                <div class="content-box-wrapper">
-                                    <div id="data-example-3" style="width: 100%; height: 250px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row mrg20B">
-                                <div class="col-md-6">
-                                    <a href="#" title="Example tile shortcut" class="tile-box tile-box-shortcut btn-primary">
-                                        <span class="bs-badge badge-absolute">5</span>
-                                        <div class="tile-header">
-                                            Dashboard
+                                <div class="mail-header clearfix row">
+                                    <div class="col-md-8">
+                                        <span class="mail-title">My Profile</span>
+                                        <div class="btn-group">
+                                            <a href="#" data-toggle="dropdown" class="btn btn-default btn-small dropdown-toggle"><span class="glyph-icon icon-caret-down"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action 1</a></li>
+                                                <li><a href="#">Action 2</a></li>
+
+                                                <li><a href="#" target="_blank">Link out to social media</a></li>
+                                            </ul>
                                         </div>
-                                        <div class="tile-content-wrapper">
-                                            <i class="glyph-icon icon-dashboard"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="#" title="Example tile shortcut" class="tile-box tile-box-shortcut btn-black">
-                                        <span class="bs-badge badge-absolute">5</span>
-                                        <div class="tile-header">
-                                            Subscriptions
-                                        </div>
-                                        <div class="tile-content-wrapper">
-                                            <i class="glyph-icon icon-cogs"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="panel">
-                                <div class="panel-body">
-                                    <h3 class="title-hero">
-                                        Users activity
-                                    </h3>
-                                    <div class="example-box-wrapper">
-                                        <div class="timeline-box timeline-box-left">
-                                            <div class="tl-row">
-                                                <div class="tl-item float-right">
-                                                    <div class="tl-icon bg-orange">
-                                                        <i class="glyph-icon icon-image"></i>
-                                                    </div>
-                                                    <div class="popover right">
-                                                        <div class="arrow"></div>
-                                                        <div class="popover-content">
-                                                            <div class="tl-label bs-label label-info">Added Images</div>
-                                                            <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
-                                                            <div class="tl-time">
-                                                                <i class="glyph-icon icon-clock-o"></i>
-                                                                a few seconds ago
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tl-row">
-                                                <div class="tl-item float-right">
-                                                    <div class="tl-icon bg-primary">
-                                                        <i class="glyph-icon icon-twitter"></i>
-                                                    </div>
-                                                    <div class="popover right">
-                                                        <div class="arrow"></div>
-                                                        <div class="popover-content">
-                                                            <div class="tl-label bs-label bg-yellow">Shared to Twitter</div>
-                                                            <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
-                                                            <div class="tl-time">
-                                                                <i class="glyph-icon icon-clock-o"></i>
-                                                                a few seconds ago
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tl-row">
-                                                <div class="tl-item float-right">
-                                                    <div class="tl-icon bg-green">
-                                                        <i class="glyph-icon icon-lock"></i>
-                                                    </div>
-                                                    <div class="popover right">
-                                                        <div class="arrow"></div>
-                                                        <div class="popover-content">
-                                                            <div class="tl-label bs-label label-danger">Saved new password</div>
-                                                            <p class="tl-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. </p>
-                                                            <div class="tl-time">
-                                                                <i class="glyph-icon icon-clock-o"></i>
-                                                                a few seconds ago
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                    </div>
+                                    <div class="float-right col-md-4 pad0A">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-default" tabindex="-1">
+                                                    <i class="glyph-icon icon-search"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -1312,62 +1229,428 @@
                                         <i class="glyph-icon icon-picture-o"></i>
                                     </a>
                                     <a href="#" class="btn btn-md btn-post float-right btn-success" title="">
-                                        Post
+                                        Share it!
                                     </a>
                                 </div>
                             </div>
-                            <div class="panel">
-                                <div class="panel-body">
-                                    <ul class="todo-box">
-                                        <li class="border-red">
-                                            <input type="checkbox" name="todo-1" id="todo-1">
-                                            <label for="todo-1">This is an example task that i need to finish</label>
-                                            <span class="bs-label bg-red" title="">Overdue</span>
-                                            <a href="#" class="btn btn-xs btn-danger float-right" title="">
-                                                <i class="glyph-icon icon-remove"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-xs btn-success float-right" title="">
+                            <div class="example-box-wrapper">
+                                <ul class="list-group row list-group-icons">
+                                    <li class="col-md-3 active">
+                                        <a data-target="#tab-example-4" data-toggle="tab" class="list-group-item">
+                                            <i class="glyph-icon font-red icon-user"></i>
+                                            User Info
+                                        </a>
+                                    </li>
+                                    <li class="col-md-3">
+                                        <a data-target="#tab-example-3" data-toggle="tab" class="list-group-item">
+                                            <i class="glyph-icon font-blue-alt icon-file"></i>
+                                            Personal Info
+                                        </a>
+                                    </li>
+                                    <li class="col-md-3">
+                                        <a data-target="#tab-example-1" data-toggle="tab" class="list-group-item">
+                                            <i class="glyph-icon icon-dashboard"></i>
+                                            Account Settings
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                                <div class="tab-content" tab-directive>
+                                    <div class="tab-pane fade" id="tab-example-1">
+                                        <div class="alert alert-close alert-success">
+                                            <a href="#" title="Close" class="glyph-icon alert-close-btn icon-remove"></a>
+                                            <div class="bg-green alert-icon">
                                                 <i class="glyph-icon icon-check"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-orange">
-                                            <input type="checkbox" name="todo-2" id="todo-2">
-                                            <label for="todo-2">Update server to a newer version</label>
-                                            <span class="bs-label bg-green" title="">2 Weeks</span>
-                                            <a href="#" class="btn btn-xs btn-danger float-right" title="">
-                                                <i class="glyph-icon icon-remove"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-xs btn-success float-right" title="">
-                                                <i class="glyph-icon icon-check"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-blue">
-                                            <input type="checkbox" name="todo-3" id="todo-3">
-                                            <label for="todo-3">Share work article published by marketing  </label>
-                                            <span class="bs-label bg-blue" title="">Tomorrow</span>
-                                            <a href="#" class="btn btn-xs btn-danger float-right" title="">
-                                                <i class="glyph-icon icon-remove"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-xs btn-success float-right" title="">
-                                                <i class="glyph-icon icon-check"></i>
-                                            </a>
-                                        </li>
-                                        <li class="border-purple">
-                                            <input type="checkbox" name="todo-4" id="todo-4">
-                                            <label for="todo-4">Promote Steve Wilson on LinkedIn</label>
-                                            <span class="bs-label bg-black" title="">Today</span>
-                                            <a href="#" class="btn btn-xs btn-danger float-right" title="">
-                                                <i class="glyph-icon icon-remove"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-xs btn-success float-right" title="">
-                                                <i class="glyph-icon icon-check"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                            </div>
+                                            <div class="alert-content">
+                                                <h4 class="alert-title">Your profile is currently visible</h4>
+                                                <p>If you wish to hide your profile, please use the visibility Toggle below </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="content-box">
+                                                    <form class="form-horizontal clearfix pad15L pad15R pad20B bordered-row">
+                                                        <div class="form-group remove-border">
+                                                            <label class="col-sm-7 control-label">Enable account:</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="checkbox" ng-model="enabledaccount" class="input-switch-alt">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-7 control-label">Visible Profile</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="checkbox" ng-model="visibleprofile" checked class="input-switch-alt">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-7 control-label">Hide timeline</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="checkbox" data-on-color="danger" ng-model="hidetimeline" data-size="small" name="checkbox-example-1" class="input-switch" data-on-text="On" data-off-text="Off">
+                                                            </div>
+                                                        </div>
+
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="content-box mrg15B">
+                                                    <h3 class="content-box-header clearfix">
+                                                        Change Password
+                                                        <div class="font-size-11 float-right">
+                                                            <a href="#" title="">
+                                                                <i class="glyph-icon mrg5R opacity-hover icon-plus"></i>
+                                                            </a>
+                                                            <a href="#" title="">
+                                                                <i class="glyph-icon opacity-hover icon-cog"></i>
+                                                            </a>
+                                                        </div>
+                                                    </h3>
+                                                    <div class="content-box-wrapper pad0T clearfix">
+                                                        <form class="form-horizontal pad15L pad15R bordered-row">
+                                                            <div class="form-group">
+                                                                <label class="col-sm-6 control-label">Old password:</label>
+                                                                <div class="col-sm-6">
+                                                                    <input type="text" class="form-control" ng-model="oldpassword" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-6 control-label">New password:</label>
+                                                                <div class="col-sm-6">
+                                                                    <input type="text" class="form-control" ng-model="newpassword" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-sm-6 control-label">Repeat password:</label>
+                                                                <div class="col-sm-6">
+                                                                    <input type="text" class="form-control" ng-model="repeatedpassword" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="button-pane mrg20T">
+                                                        <button ng-click="updatepassword()" class="btn btn-success">Update Password</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-example-2">
+                                        <div class="content-box pad25A">
+                                            <ul class="chat-box">
+                                                <li>
+                                                    <div class="chat-author">
+                                                        <img width="36" src="../../assets/image-resources/gravatar.jpg" alt="">
+                                                    </div>
+                                                    <div class="popover left no-shadow">
+                                                        <div class="arrow"></div>
+                                                        <div class="popover-content">
+                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+                                                            <div class="chat-time">
+                                                                <i class="glyph-icon icon-clock-o"></i>
+                                                                a few seconds ago
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="float-left">
+                                                    <div class="chat-author">
+                                                        <img width="36" src="../../assets/image-resources/gravatar.jpg" alt="">
+                                                    </div>
+                                                    <div class="popover right no-shadow">
+                                                        <div class="arrow"></div>
+                                                        <div class="popover-content">
+                                                            <h3>
+                                                                <a href="#" title="Agile UI">Agile UI</a>
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn glyph-icon icon-inbox font-gray tooltip-button" data-placement="bottom" title="This chat line was received in the mail."></a>
+                                                                </div>
+                                                            </h3>
+                                                            This comment line has a title (author name) and a right button panel.
+                                                            <div class="chat-time">
+                                                                <i class="glyph-icon icon-clock-o"></i>
+                                                                a few seconds ago
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="chat-author">
+                                                        <img width="36" src="../../assets/image-resources/gravatar.jpg" alt="">
+                                                    </div>
+                                                    <div class="popover left no-shadow">
+                                                        <div class="arrow"></div>
+                                                        <div class="popover-content">
+                                                            This comment line has a bottom button panel, box shadow and title.
+                                                            <div class="chat-time">
+                                                                <i class="glyph-icon icon-clock-o"></i>
+                                                                a few seconds ago
+                                                            </div>
+                                                            <div class="divider"></div>
+                                                            <a href="#" class="btn btn-sm btn-default font-bold text-transform-upr" title=""><span class="button-content">Reply</span></a>
+                                                            <a href="#" class="btn btn-sm btn-danger float-right tooltip-button" data-placement="left" title="Remove comment"><i class="glyph-icon icon-remove"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="chat-author">
+                                                        <img width="36" src="../../assets/image-resources/gravatar.jpg" alt="">
+                                                    </div>
+                                                    <div class="popover left no-shadow">
+                                                        <div class="arrow"></div>
+                                                        <div class="popover-content">
+                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+                                                            <div class="chat-time">
+                                                                <i class="glyph-icon icon-clock-o"></i>
+                                                                a few seconds ago
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="float-left">
+                                                    <div class="chat-author">
+                                                        <img width="36" src="../../assets/image-resources/gravatar.jpg" alt="">
+                                                    </div>
+                                                    <div class="popover right no-shadow">
+                                                        <div class="arrow"></div>
+                                                        <div class="popover-content">
+                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+                                                            <div class="chat-time">
+                                                                <i class="glyph-icon icon-clock-o"></i>
+                                                                a few seconds ago
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-example-3">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="list-group">
+                                                    <li class="mrg10B">
+                                                        <a data-target="#faq-tab-1" data-toggle="tab" class="list-group-item">
+                                                            Your Info
+                                                            <i class="glyph-icon icon-angle-right mrg0A"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="mrg10B">
+                                                        <a data-target="#faq-tab-2" data-toggle="tab" class="list-group-item">
+                                                            Next of Kin
+                                                            <i class="glyph-icon font-green icon-angle-right mrg0A"></i>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="tab-content" tab-directive>
+                                                    <div class="tab-pane fade active in pad0A" id="faq-tab-1">
+                                                        <div class="panel-group" id="accordion5">
+                                                            <div class="panel">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title">
+                                                                        <a data-toggle="collapse" data-parent="#accordion5" data-target="#collapseOne" tab-directive>
+                                                                            About you
+                                                                        </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseOne" class="panel-collapse collapse ">
+                                                                    <div class="panel-body">
+                                                                        <p>
+                                                                            <select ng-model="maritalstatus" class="custom-select">
+                                                                                <option>Married (and not separated)</option>
+                                                                                <option>Living common law</option>
+                                                                                <option>Widowed (not living common law)</option>
+                                                                                <option>Separated (not living common law)</option>
+                                                                                <option>Divorced (not living common law)</option>
+                                                                                <option>Single (not living common law)</option>
+                                                                            </select>
+                                                                        </p><br />
+                                                                        <label class="col-sm-3 control-label">Are you disabled?</label>
+                                                                        <div class="col-sm-6">
+                                                                            <select ng-model="areyoudisabled" class="custom-select">
+                                                                                <option>No</option>
+                                                                                <option>Yes</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <select ng-model="employmentstatus" class="custom-select" placeholder="Employment Status...">
+                                                                            <option>Employed</option>
+                                                                            <option>Self-Employed</option>
+                                                                            <option>Unemployed</option>
+                                                                        </select>
+
+                                                                        <p><input type="text" class="form-control" ng-model="disabilitynature" placeholder="Nature of disability..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="othermaritalstatus" placeholder="Marital Status..."></p>
+                                                                        <p><input type="text" class="bootstrap-datepicker form-control" ng-model="dateofbirth" placeholder="Date of Birth..." data-date-format="mm/dd/yy"></p>
+                                                                        <p><input type="text" class="form-control" ng-model="ninumber" placeholder="NI Number ..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="occupation" placeholder="Occupation..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="taxrefnumber" placeholder="Tax Reference Number..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="payerefnumber" placeholder="PAYE Reference Number..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="nationality" placeholder="Nationality..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="religion" placeholder="Religion..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="height" placeholder="Height (Inches)..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="weight" placeholder="Weight (lbs)..."></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title">
+                                                                        <a data-toggle="collapse" data-parent="#accordion5" data-target="#collapseTwo">
+                                                                            Contact Information
+                                                                        </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseTwo" class="panel-collapse collapse">
+                                                                    <div class="panel-body">
+                                                                        <p><input type="text" class="form-control" ng-model="contacthousenameornumber" placeholder="House Number /Name..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="contactstreet1" placeholder="Street 1..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="contactstreet2" placeholder="Street 2 ..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="contactstreet3" placeholder="Street 3 ..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="contacttown" placeholder="Town..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="contactcounty" placeholder="County..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="contactpostcode" placeholder="Postcode/Zip..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="contactcountry" placeholder="Country..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="contacttelno" placeholder="Tel No..."></p>
+                                                                        <p><input type="text" class="form-control" ng-model="contactmobileno" placeholder="Mobile No..."></p>
+                                                                        <p><input type="email" class="form-control" ng-model="contactpersonalemail" placeholder="Personal Email..."></p>
+                                                                        <p><input type="email" class="form-control" ng-model="contactworkemail" placeholder="Work Email..."></p>
+                                                                        <p><input type="email" class="form-control" ng-model="contactotheremail" placeholder="Other Email..."></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade pad0A" id="faq-tab-2">
+                                                        <div class="panel-group" id="accordion1">
+                                                            <div class="panel">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title">
+                                                                        <a data-toggle="collapse" data-parent="#accordion1" data-target="#collapseOne1">
+                                                                            Address
+                                                                        </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseOne1" class="panel-collapse collapse">
+                                                                    <div class="panel-body">
+                                                                        <div class="panel-body">
+                                                                            <p><input type="text" class="form-control" ng-model="addresshousenameornumber" placeholder="House Number /Name..."></p>
+                                                                            <p><input type="text" class="form-control" ng-model="addressstreetadd1" placeholder="Street 1..."></p>
+                                                                            <p><input type="text" class="form-control" ng-model="addressstreetadd2" placeholder="Street 2 ..."></p>
+                                                                            <p><input type="text" class="form-control" ng-model="addressstreetadd3" placeholder="Street 3 ..."></p>
+                                                                            <p><input type="text" class="form-control" ng-model="addresstown" placeholder="Town..."></p>
+                                                                            <p><input type="text" class="form-control" ng-model="addresscounty" placeholder="County..."></p>
+                                                                            <p><input type="text" class="form-control" ng-model="addresspostcodezip" placeholder="Postcode/Zip..."></p>
+                                                                            <p><input type="text" class="form-control" ng-model="addresscountry" placeholder="Country..."></p>
+                                                                            <p><input type="email" class="form-control" ng-model="addresspersonalemail" placeholder="Personal Email..."></p>
+                                                                            <p><input type="email" class="form-control" ng-model="addressworkemail" placeholder="Work Email..."></p>
+                                                                            <p><input type="email" class="form-control" ng-model="addressotheremail" placeholder="Other Email..."></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel">
+                                                                <div class="panel-heading">
+                                                                    <h4 class="panel-title">
+                                                                        <a data-toggle="collapse" data-parent="#accordion1" data-target="#collapseTwo1">
+                                                                            Contact Information
+                                                                        </a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div id="collapseTwo1" class="panel-collapse collapse">
+                                                                    <div class="panel-body">
+                                                                        <div class="panel-body">
+                                                                            <p><input type="number" class="form-control" ng-model="nextkintelnumber" placeholder="Tel No..."></p>
+                                                                            <p><input type="number" class="form-control" ng-model="nextkinmobilenumber" placeholder="Mobile No..."></p>
+                                                                            <p><input type="email" class="form-control" ng-model="nextkinpersonalemail" placeholder="Personal Email..."></p>
+                                                                            <p><input type="email" class="form-control" ng-model="nextkinworkemail" placeholder="Work Email..."></p>
+                                                                            <p><input type="email" class="form-control" ng-model="nextkinotheremail" placeholder="Other Email..."></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane pad0A fade active in" id="tab-example-4">
+                                        <div class="content-box">
+                                            <form class="form-horizontal pad15L pad15R bordered-row">
+                                                <div class="form-group remove-border">
+                                                    <label class="col-sm-3 control-label">Title:</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control" placeholder="Title..." ng-model="title" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group remove-border">
+                                                    <label class="col-sm-3 control-label">First Name:</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control" placeholder="First name..." ng-model="firstname" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Last Name:</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control" placeholder="Last name..." ng-model="lastname" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Email:</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control" placeholder="Email address..." ng-model="email" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Website:</label>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control" placeholder="Website..." ng-model="website">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">About me:</label>
+                                                    <div class="col-sm-6">
+                                                        <textarea ng-model="aboutme" rows="3" class="form-control textarea-autosize"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Profile Picture:</label>
+                                                    <div class="col-sm-6">
+                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                                                <img src='data:image/jpeg;base64,{{avatarImage}}' />
+                                                            </div>
+                                                            <div>
+                                                                <span class="btn btn-default btn-file">
+                                                                    <span class="fileinput-new">Select image</span>
+                                                                    <span class="fileinput-exists">Change</span>
+                                                                    <input type="file" file-model="photoimage" />
+                                                                </span>
+                                                                <a class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="button-pane mrg20T">
+                                                <button ng-click="savepersonalinfo()" class="btn btn-info">Save</button>
+                                                <button class="btn btn-link font-gray-dark">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+
 
 
                 </div>
@@ -1375,3 +1658,5 @@
         </div>
     </div>
 </div>
+
+

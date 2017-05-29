@@ -1,5 +1,6 @@
-﻿ibrokermeApp.controller('indexcontroller', function ($scope, $location, $window, authenticationfactory, userauthfactory) {
+﻿ibrokermeApp.controller('indexcontroller', function ($scope, $location, $window, authenticationfactory, userauthfactory, whoamiservice) {
     const token = $window.sessionStorage.token;
+    const userid = $window.sessionStorage.getItem('userid');
     $scope.username = $window.sessionStorage.username;
     $scope.processlogout = function () {
         if (authenticationfactory.isLogged) {
@@ -29,5 +30,7 @@
             }
         })
     }
+    
+
 });
 
